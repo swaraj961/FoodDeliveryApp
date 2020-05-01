@@ -15,20 +15,26 @@ class RecentOrders extends StatelessWidget {
           ),
         ),
         child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          //main
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: <Widget>[
-            ClipRRect(
-              //rounded image corners
-              borderRadius: BorderRadius.circular(15),
-              child: Image(
-                height: 100,
-                width: 100,
-                image: AssetImage(order.food.imageUrl),
-                fit: BoxFit.cover,
-              ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: <Widget>[
+                ClipRRect(
+                  //rounded image corners
+                  borderRadius: BorderRadius.circular(15),
+                  child: Image(
+                    height: 100,
+                    width: 100,
+                    image: AssetImage(order.food.imageUrl),
+                    fit: BoxFit.cover,
+                  ),
+                ),
+              ],
             ),
             Container(
-              //wrapped with it not padding due to button and lot letting it to touch the button
+              //wrapped with it not padding due to button and lot letting  text to touch the button
               margin: EdgeInsets.all(10),
               child: Column(
                 //for texts
@@ -43,10 +49,16 @@ class RecentOrders extends StatelessWidget {
                     ),
                     overflow: TextOverflow.ellipsis, //long nameinto dot dot
                   ),
+                  SizedBox(
+                    height: 3,
+                  ),
                   Text(
                     order.restaurant.name,
                     style: TextStyle(fontWeight: FontWeight.w500, fontSize: 15),
                     overflow: TextOverflow.ellipsis,
+                  ),
+                  SizedBox(
+                    height: 3,
                   ),
                   Text(
                     order.date,
@@ -56,15 +68,20 @@ class RecentOrders extends StatelessWidget {
                 ],
               ),
             ),
-            CircleAvatar(
+            Container(
+              width: 48,
+              margin: EdgeInsets.only(right: 20),
+              decoration: BoxDecoration(
+                color: Theme.of(context).primaryColor,
+                borderRadius: BorderRadius.circular(30),
+              ),
               child: IconButton(
                   icon: Icon(
                     Icons.add,
                     color: Colors.white,
                   ),
                   onPressed: null),
-              backgroundColor: Colors.deepOrangeAccent,
-            ), // to take entire 100*100
+            ),
           ],
         ),
       );
