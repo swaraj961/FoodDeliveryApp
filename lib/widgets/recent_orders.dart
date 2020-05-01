@@ -2,6 +2,7 @@ import 'package:foodie/data/data.dart';
 import 'package:foodie/models/order.dart';
 import 'package:flutter/material.dart';
 
+
 class RecentOrders extends StatelessWidget {
   buildRecentOrder(BuildContext context, Order order) => Container(
         margin: EdgeInsets.all(10), //main container
@@ -14,7 +15,7 @@ class RecentOrders extends StatelessWidget {
             color: Colors.grey.shade300,
           ),
         ),
-        child: Row(
+        child: Row( // last wapper to spaceb/w
           //main
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: <Widget>[
@@ -23,7 +24,7 @@ class RecentOrders extends StatelessWidget {
               children: <Widget>[
                 ClipRRect(
                   //rounded image corners
-                  borderRadius: BorderRadius.circular(15),
+                  borderRadius: BorderRadius.circular(12),
                   child: Image(
                     height: 100,
                     width: 100,
@@ -33,39 +34,41 @@ class RecentOrders extends StatelessWidget {
                 ),
               ],
             ),
-            Container(
-              //wrapped with it not padding due to button and lot letting  text to touch the button
-              margin: EdgeInsets.all(10),
-              child: Column(
-                //for texts
-                crossAxisAlignment: CrossAxisAlignment.start,
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: <Widget>[
-                  Text(
-                    order.food.name,
-                    style: TextStyle(
-                      fontWeight: FontWeight.bold,
-                      fontSize: 20,
+            Expanded(
+                          child: Container(
+                //wrapped with it not padding due to button and lot letting  text to touch the button
+                margin: EdgeInsets.all(10),
+                child: Column(
+                  //for texts
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: <Widget>[
+                    Text(
+                      order.food.name,
+                      style: TextStyle(
+                        fontWeight: FontWeight.bold,
+                        fontSize: 20,
+                      ),
+                      overflow: TextOverflow.ellipsis, //long nameinto dot dot
                     ),
-                    overflow: TextOverflow.ellipsis, //long nameinto dot dot
-                  ),
-                  SizedBox(
-                    height: 3,
-                  ),
-                  Text(
-                    order.restaurant.name,
-                    style: TextStyle(fontWeight: FontWeight.w500, fontSize: 15),
-                    overflow: TextOverflow.ellipsis,
-                  ),
-                  SizedBox(
-                    height: 3,
-                  ),
-                  Text(
-                    order.date,
-                    style: TextStyle(fontWeight: FontWeight.w500, fontSize: 15),
-                    overflow: TextOverflow.ellipsis,
-                  ),
-                ],
+                    SizedBox(
+                      height: 3,
+                    ),
+                    Text(
+                      order.restaurant.name,
+                      style: TextStyle(fontWeight: FontWeight.w500, fontSize: 15),
+                      overflow: TextOverflow.ellipsis,
+                    ),
+                    SizedBox(
+                      height: 3,
+                    ),
+                    Text(
+                      order.date,
+                      style: TextStyle(fontWeight: FontWeight.w500, fontSize: 15),
+                      overflow: TextOverflow.ellipsis,
+                    ),
+                  ],
+                ),
               ),
             ),
             Container(
@@ -105,7 +108,8 @@ class RecentOrders extends StatelessWidget {
           width: double.infinity,
           // color: Colors.blueAccent,
           child: ListView.builder(
-            // for iteam returns
+         physics: BouncingScrollPhysics(), //bouncing effect
+            
             scrollDirection: Axis.horizontal,
             itemCount: currentUser.orders.length,
             itemBuilder: (BuildContext context, int index) {
