@@ -1,7 +1,7 @@
 import 'package:foodie/data/data.dart';
 import 'package:foodie/models/order.dart';
 import 'package:flutter/material.dart';
-
+import 'package:foodie/splash.dart';
 
 class RecentOrders extends StatelessWidget {
   buildRecentOrder(BuildContext context, Order order) => Container(
@@ -83,7 +83,9 @@ class RecentOrders extends StatelessWidget {
                     Icons.add,
                     color: Colors.white,
                   ),
-                  onPressed: null),
+                  onPressed: (){
+Navigator.push(context, MaterialPageRoute(builder: (context)=>Splashscreen(),),);
+                  }),
             ),
           ],
         ),

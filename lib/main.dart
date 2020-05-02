@@ -1,3 +1,5 @@
+
+
 import 'package:flutter/material.dart';
 import 'package:foodie/pages/home.dart';
 import 'package:foodie/data/data.dart';
@@ -5,6 +7,7 @@ import 'package:foodie/data/data.dart';
 void main() => runApp(Myapp());
 
 class Myapp extends StatelessWidget {
+ 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(

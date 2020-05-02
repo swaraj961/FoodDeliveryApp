@@ -10,6 +10,7 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+  
   double rating = 3.0;
   buildRestaudrants() {
     List<Widget> restaurantslist = [];
