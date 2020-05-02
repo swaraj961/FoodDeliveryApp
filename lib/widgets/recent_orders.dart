@@ -84,7 +84,7 @@ class RecentOrders extends StatelessWidget {
                     color: Colors.white,
                   ),
                   onPressed: (){
-Navigator.push(context, MaterialPageRoute(builder: (context)=>Splashscreen(),),);
+// Navigator.push(context, MaterialPageRoute(builder: (context)=>Splashscreen(),),);
                   }),
             ),
           ],
