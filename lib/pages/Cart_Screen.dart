@@ -65,7 +65,7 @@ class _CartScreenState extends State<CartScreen> {
                       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                       children: <Widget>[
                         GestureDetector(
-                          onTap: null,
+                          onTap: () {},
                           child: Text('+',
                               style: TextStyle(
                                   fontSize: 18,
@@ -110,28 +110,103 @@ class _CartScreenState extends State<CartScreen> {
 
   @override
   Widget build(BuildContext context) {
+    double totalprice = 0;
+    currentUser.cart.forEach((Order order) =>
+        totalprice = totalprice + order.food.price * order.quantity);
+
     return Scaffold(
       appBar: AppBar(
         title: Text('Cart(${currentUser.cart.length})'),
         centerTitle: true,
       ),
       body: ListView.separated(
-        itemCount: currentUser.cart.length,
-
+        itemCount: currentUser.cart.length + 1,
         itemBuilder: (context, index) {
-          Order orderfood = currentUser.cart[index];
+          if (index < currentUser.cart.length) {
+            Order orderfood = currentUser.cart[index];
 
-          return _builditem(orderfood);
+            return _builditem(orderfood);
+          }
+          return Padding(
+            padding: const EdgeInsets.all(15),
+            child: Column(
+              children: <Widget>[
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: <Widget>[
+                    Text(
+                      'Estimate Delivery time :',
+                      style: TextStyle(
+                        fontSize: 20,
+                        fontWeight: FontWeight.w600,
+                      ),
+                    ),
+                    Text(
+                      '25 min',
+                      style: TextStyle(
+                        fontSize: 20,
+                        fontWeight: FontWeight.w600,
+                      ),
+                    ),
+                  ],
+                ),
+                SizedBox(
+                  height: 10,
+                ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: <Widget>[
+                    Text(
+                      'Total Cost :',
+                      style: TextStyle(
+                        fontSize: 20,
+                        fontWeight: FontWeight.w600,
+                      ),
+                    ),
+                    Text(
+                      "₹" + totalprice.toStringAsFixed(2),
+                      style: TextStyle(
+                          fontSize: 20,
+                          fontWeight: FontWeight.w600,
+                          color: Colors.green.shade700),
+                    ),
+                  ],
+                ),
+                SizedBox(
+                  height: 100,
+                ),
+              ],
+            ),
+          );
         },
-        //Container(
-        //   margin: EdgeInsets.all(10),
-        //   height: 100,
-        //   width: MediaQuery.of(context).size.width,
-        //   color: Colors.redAccent,
-        // ),
         separatorBuilder: (BuildContext context, int index) => Divider(
           height: 2,
           color: Colors.grey,
+        ),
+      ),
+      bottomSheet: Container(
+        height: 80,
+        width: MediaQuery.of(context).size.width,
+        decoration: BoxDecoration(
+          color: Theme.of(context).primaryColor,
+          boxShadow: [
+            BoxShadow(
+              color: Colors.black26,
+              offset: Offset(0, -2),
+              blurRadius: 7.0,
+            ),
+          ],
+        ),
+        child: FlatButton(
+          onPressed: () {},
+          child: Text(
+            'CHECKOUT',
+            style: TextStyle(
+                letterSpacing: 1.5,
+                fontSize: 20,
+                fontWeight: FontWeight.w700,
+                color: Colors.white),
+          ),
         ),
       ),
     );

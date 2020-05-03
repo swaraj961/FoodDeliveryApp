@@ -1,6 +1,7 @@
 
 
 import 'package:flutter/material.dart';
+import 'package:foodie/pages/Cart_Screen.dart';
 import 'package:foodie/pages/home.dart';
 import 'package:foodie/data/data.dart';
 
@@ -37,7 +38,8 @@ class Myapp extends StatelessWidget {
                     fontSize: 15,
                     fontWeight: FontWeight.bold),
               ),
-              onPressed: null,
+              onPressed:null,
+              // ()=>Navigator.push(context, MaterialPageRoute<dynam>(builder: context)=>CartScreen()),
             ),
           ],
           centerTitle: true,
