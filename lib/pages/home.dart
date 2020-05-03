@@ -25,6 +25,7 @@ class _HomePageState extends State<HomePage> {
                 context,
                 MaterialPageRoute(
                   builder: (context) => RestaurantScreen(
+                    
                     restaurantinfo: restE, //passing the obj value from one screen to another
                   ),
                 ),
