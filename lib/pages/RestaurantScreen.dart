@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:smooth_star_rating/smooth_star_rating.dart';
 import 'package:foodie/models/restaurant.dart';
 import 'package:foodie/models/food.dart';
+import 'package:foodie/pages/Cart_Screen.dart';
 
 double rating = 3.0;
 
@@ -69,7 +70,7 @@ class _RestaurantScreenState extends State<RestaurantScreen> {
                       color: Colors.white,
                       fontWeight: FontWeight.bold),
                 ),
-                Text(menuitem.price.toString() + "\$",
+                Text(menuitem.price.toString() + "\₹",
                     style: TextStyle(
                         letterSpacing: 1.2,
                         fontSize: 20,
@@ -92,10 +93,15 @@ class _RestaurantScreenState extends State<RestaurantScreen> {
               child: IconButton(
                 icon: Icon(Icons.add),
                 color: Colors.white,
-                onPressed: () {},
+                onPressed: () => Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => CartScreen(),
+                  ),
+                ),
               ),
             ),
-          )
+          ),
         ],
       ),
     );

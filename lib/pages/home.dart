@@ -5,6 +5,7 @@ import 'package:foodie/widgets/recent_orders.dart';
 import 'package:smooth_star_rating/smooth_star_rating.dart';
 import 'package:foodie/pages/RestaurantScreen.dart';
 
+
 class HomePage extends StatefulWidget {
   @override
   _HomePageState createState() => _HomePageState();
@@ -34,7 +35,7 @@ class _HomePageState extends State<HomePage> {
             child: Container(
               margin: EdgeInsets.symmetric(vertical: 10, horizontal: 2),
               decoration: BoxDecoration(
-                // boxShadow: [BoxShadow(color:Colors.grey,offset: Offset(10, 10),blurRadius: 10)],
+               //  boxShadow: [BoxShadow(color:Colors.grey,offset: Offset(8, 10),blurRadius: 5)],
                 color: Colors.white,
                 borderRadius: BorderRadius.circular(15),
                 border: Border.all(width: 1, color: Colors.grey.shade200),

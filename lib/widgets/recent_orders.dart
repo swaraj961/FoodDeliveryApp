@@ -5,6 +5,7 @@ import 'package:foodie/splash.dart';
 
 class RecentOrders extends StatelessWidget {
   buildRecentOrder(BuildContext context, Order order) => Container(
+    
         margin: EdgeInsets.all(10), //main container
         height: 50,
         width: 320,
@@ -77,6 +78,7 @@ class RecentOrders extends StatelessWidget {
               decoration: BoxDecoration(
                 color: Theme.of(context).primaryColor,
                 borderRadius: BorderRadius.circular(30),
+                
               ),
               child: IconButton(
                   icon: Icon(
