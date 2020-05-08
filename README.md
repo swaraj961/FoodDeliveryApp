@@ -1,16 +1,18 @@
-# foodie
+![star](https://img.shields.io/github/stars/swaraj961/FoodDeliveryApp) ![PR](https://img.shields.io/badge/PR-welcome-green) ![fork](https://img.shields.io/github/forks/swaraj961/FoodDeliveryApp) ![love](https://img.shields.io/badge/open%20%20source-%E2%9D%A4-red) ![flutter](https://img.shields.io/badge/Flutter-Framework-blue) ![dev](https://img.shields.io/badge/developed%20by%20-swaraj%20routray-red)
 
-A new Flutter project.
+# Food DeliveryApp UI!
+-Beautiful UI with gridview and listview
 
-## Getting Started
+## Pending
+- [ ] User firebase Auth / info Avatar
+- [x] restraunts screen works
+- [ ] add cart and remove item
+- [ ] payment checkout page
+- [ ] Push Notifications
+- [ ] more pictures and details of restraunts 
+- [ ] Review and ratings
+- [ ] splash screen not working as of now
 
-This project is a starting point for a Flutter application.
+# App UI 
+![Finished App](https://github.com/swaraj961/FoodDeliveryApp/blob/master/deliveryapp.gif)
 
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
-
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
